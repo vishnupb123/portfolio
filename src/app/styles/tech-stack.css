@@ -1,0 +1,151 @@
+/* General Section Styling */
+#tech-stack {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  color: black;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Section Description */
+.section-description {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* Tech Grid */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tech Cards */
+.tech-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hover Effects */
+.tech-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Tech Icon */
+.tech-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Tech Icon Hover Animation */
+.tech-card:hover .tech-icon {
+  transform: rotateY(360deg);
+}
+
+/* Tech Title */
+.tech-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tech-grid {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  #tech-stack {
+      padding: 60px 15px;
+  }
+
+  .section-title {
+      font-size: 2rem;
+  }
+
+  .section-description {
+      font-size: 1rem;
+  }
+
+  .tech-grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+  }
+
+  .tech-card {
+      padding: 15px;
+  }
+
+  .tech-icon {
+      width: 50px;
+      height: 50px;
+  }
+
+  .tech-title {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #tech-stack {
+      padding: 50px 10px;
+  }
+
+  .section-title {
+      font-size: 1.8rem;
+  }
+
+  .section-description {
+      font-size: 0.9rem;
+  }
+
+  .tech-grid {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+  }
+
+  .tech-card {
+      padding: 12px;
+      width: 110px;
+      height: 130px;
+  }
+
+  .tech-icon {
+      width: 40px;
+      height: 40px;
+  }
+
+  .tech-title {
+      font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,350 @@
+/* =====================================================
+   BASE STYLES (Large Devices: ≥992px)
+   ===================================================== */
+
+/* Overall Section Styling */
+#about {
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #f9f9f9 0%, #69aeff 100%);
+}
+
+.content-section {
+  width: 100%;
+}
+
+/* About Container */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  height: 100%;
+}
+
+/* --- INITIAL MODE STYLES --- */
+.about-intro {
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeIn 1s forwards ease-out;
+}
+
+.about-intro h2 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.about-intro p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* Journey Button */
+.journey-btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #fff;
+  color: #007BFF;
+  border: 2px solid #007BFF;
+  border-radius: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journey-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* --- JOURNEY MODE STYLES --- */
+.journey-mode .journey-mode-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.journey-mode .back-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  z-index: 10;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #007BFF;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.journey-mode .back-btn:hover {
+  background-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Disable native vertical scroll on journey wrapper */
+.journey-mode .journey-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: contain;
+}
+
+/* Horizontal container for journey cards */
+.journey-mode .journey-container {
+  display: flex;
+  height: 100%;
+  transition: transform 0.2s ease-out;
+}
+
+/* Each journey card - two-column layout by default */
+.journey-mode .journey-section {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #0056b3, #007BFF);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 0 0.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.8s forwards ease-out;
+  animation-delay: 0.2s;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Journey card inner content */
+.journey-mode .card-text {
+  flex: 1;
+  text-align: left;
+}
+
+.journey-mode .card-text h3 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.journey-mode .card-text p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.journey-mode .card-text ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* --- Journey Mode - Card Images Container & Images --- */
+.journey-mode .card-images {
+  flex: 1;
+  display: flex;
+  /* flex-wrap: wrap; Allow images to wrap */
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee;
+  border-radius: 13px;
+  padding: 25px;
+  /* Remove fixed height so the container adapts to its content */
+  min-height: 200px;
+  height:100%;
+}
+
+.journey-mode .card-images img {
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  max-width: 100%; /* Image never exceeds its container */
+  width: 50%;
+  height: 100%; /* Maintain aspect ratio */
+}
+
+.journey-mode .card-images img:hover {
+  transform: scale(1.05);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   MEDIA QUERIES
+   ===================================================== */
+
+/* -----------------------------
+   Adjustments for Medium Devices
+   (max-width: 900px)
+------------------------------ */
+@media (max-width: 900px) {
+  /* Switch journey cards from row to column layout */
+  .journey-mode .journey-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  /* Center text content */
+  .journey-mode .card-text {
+    text-align: center;
+  }
+  /* Adjust heading sizes */
+  .journey-mode .card-text h3 {
+    font-size: 1.75rem;
+  }
+  .journey-mode .card-text p,
+  .journey-mode .card-text ul {
+    font-size: 1rem;
+  }
+  /* Adjust card-images container */
+  .journey-mode .card-images {
+    width: 100%;
+    padding: 10px;
+    min-height: 120px;
+    display: flex;
+    flex-wrap : nowrap;
+    
+  }
+  .journey-mode .card-images img {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+/* -----------------------------
+   Adjustments for Small Devices 
+   (Landscape Phones: 576px–767.98px)
+------------------------------ */
+@media (max-width: 767.98px) and (min-width: 576px) {
+  .about-intro {
+    padding: 1.75rem;
+  }
+  .about-intro h2 {
+    font-size: 2rem;
+  }
+  .about-intro p {
+    font-size: 0.95rem;
+  }
+  .journey-btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  /* Force journey mode cards to stack vertically */
+  .journey-mode .journey-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  .journey-mode .card-text {
+    text-align: center;
+  }
+  .journey-mode .card-text h3 {
+    font-size: 1.75rem;
+  }
+  .journey-mode .card-text p,
+  .journey-mode .card-text ul {
+    font-size: 0.95rem;
+  }
+  .journey-mode .card-images {
+    width: 100%;
+    padding: 15px;
+    min-height: 150px;
+  }
+  .journey-mode .card-images img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* -----------------------------
+   Adjustments for Extra Small Devices 
+   (Portrait Phones: <576px)
+------------------------------ */
+@media (max-width: 575.98px) {
+  #about {
+    padding: 2rem 0.5rem;
+  }
+  .about-intro {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+  .about-intro h2 {
+    font-size: 1.8rem;
+  }
+  .about-intro p {
+    font-size: 0.9rem;
+  }
+  .journey-btn {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+  /* Reduce journey-mode container height */
+  .journey-mode .journey-mode-container {
+    height: 70vh;
+  }
+  .journey-mode .back-btn {
+    top: 0.5rem;
+    left: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  .journey-mode .journey-section {
+    padding: 1rem;
+    gap: 0.75rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  .journey-mode .card-text h3 {
+    font-size: 1.5rem;
+  }
+  .journey-mode .card-text p,
+  .journey-mode .card-text ul {
+    font-size: 0.9rem;
+  }
+  .journey-mode .card-images {
+    width: 100%;
+    padding: 10px;
+    min-height: 120px;
+    display: flex;
+    flex-wrap : nowrap;
+    
+  }
+  .journey-mode .card-images img {
+    width: 50%;
+    height: 100%;
+  }
+}

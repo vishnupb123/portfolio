@@ -1,0 +1,45 @@
+/my-portfolio
+├── /public                     //Stores static assets like images, icons, and other publicly available resources.
+│   ├── /assets
+│   │   ├── /images
+│   │   └── /icons
+│   └── favicon.ico
+├── /src                       //Main directory for all project-related code to keep the root directory clean.
+│   ├── /app                  //Contains all routes and pages, following the App Router structure. Each subfolder is a route, and page.js defines the page content.
+│   │   ├── /api             
+│   │   │   └── /route.js
+│   │   ├── /about
+│   │   │   └── page.js
+│   │   ├── /contact
+│   │   │   └── page.js
+│   │   ├── /projects
+│   │   │   └── page.js
+│   │   └── /home
+│   │       └── page.js
+│   ├── /components          // Reusable React components organized into:
+│   │   ├── /common
+│   │   │   ├── Footer.js
+│   │   │   └── Navbar.js
+│   │   └── /ui
+│   │       ├── Button.js
+│   │       ├── Card.js
+│   │       └── Modal.js
+│   ├── /context
+│   │   └── ThemeContext.js
+│   ├── /hooks
+│   │   ├── useFetch.js
+│   │   └── useTheme.js
+│   ├── /lib
+│   │   ├── analytics.js
+│   │   └── constants.js
+│   ├── /styles
+│   │   ├── globals.css
+│   │   └── theme.css
+│   └── /utils
+│       ├── helpers.js
+│       └── validations.js
+├── .eslintrc.json
+├── .gitignore
+├── next.config.js
+├── package.json
+└── README.md

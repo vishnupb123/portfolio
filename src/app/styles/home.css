@@ -1,0 +1,372 @@
+/* ====================================================
+   DEFAULT / LARGE DEVICES (Desktops, ≥992px)
+   ==================================================== */
+   .home-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Left sidebar stays fixed */
+  .sidenav-container {
+    height: 100vh;
+    background-color: #222831;
+    width: 15%;
+  }
+  
+  .sidenav {
+    height: 100%;
+    background-color: #303745;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+  }
+  
+  .sidenav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.2s ease;
+    width: 75%;
+    height: 50px;
+    border-radius: 10px;
+  }
+  
+  .sidenav a:hover {
+    color: #196bccd1;
+  }
+  
+  .sidenav a.active {
+    background-color: #EEEEEE !important;
+    color: #196bccd1;
+    text-transform: capitalize;
+  }
+  
+  /* Section container takes remaining space */
+  .section-container {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    background-color: #4b89dfcf;
+  }
+  
+  .section,
+  .content-section,
+  .home-content-section {
+    height: 100vh;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    scroll-snap-align: center;
+  }
+  
+  /* Other elements (hero, logo, etc.) retain original styling */
+  .scroll-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .section {
+    position: relative;
+    transition: transform 1s ease;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .section:nth-child(odd) {
+    background-color: #222831;
+    color: white;
+  }
+  
+  .section:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .background-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  #home {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .hero-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .hero-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+  }
+  
+  .intro-text {
+    font-size: 1rem;
+    text-align: center;
+    max-width: 800px;
+    margin-top: 25px;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+  
+  .scroll-down-button {
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    align-self: center;
+  }
+  
+  .scroll-down-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 5%;
+    width: 150px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: 0.2s ease;
+  }
+  
+  .scroll-down-button-container:hover {
+    background-color: white;
+  }
+  
+  .scroll-down-button-container:hover .scroll-down-button {
+    color: #222831;
+  }
+  
+  #logo {
+    width: 100%;
+    height: auto;
+  }
+  
+  #logo text {
+    stroke: white;
+    font-size: 150px;
+    stroke-width: 5px;
+    font-family: "Poppins", sans-serif;
+    stroke-dasharray: 50% 50%;
+    stroke-dashoffset: 230px;
+    fill: transparent;
+    animation: textAnimate 2s infinite alternate;
+  }
+  
+  .hero-subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 18px;
+  }
+  
+  .hero-subtitle-paragraph {
+    font-size: 1.5rem;
+    margin-top: 18px;
+    color: #fff;
+  }
+  
+  @keyframes textAnimate {
+    0% {
+      stroke-dasharray: 0 50%;
+      stroke-dashoffset: 230px;
+      fill: rgb(89, 168, 228);
+    }
+    100% {
+      stroke-dasharray: 50% 0;
+    }
+  }
+  
+  /* ====================================================
+     MEDIUM DEVICES (Tablets, 768px–991.98px)
+     ==================================================== */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    /* You may wish to slightly widen the sidebar for touch targets */
+    .sidenav-container {
+      width: 20%;
+    }
+    /* Keep layout as two columns */
+    .home-container {
+      flex-direction: row;
+    }
+    
+    .sidenav a {
+      font-size: 16px;
+      margin: 8px;
+      padding: 8px;
+    }
+    
+    .hero-subtitle {
+      font-size: 2.2rem;
+    }
+    
+    .hero-subtitle-paragraph {
+      font-size: 1.4rem;
+    }
+    
+    #logo text {
+      font-size: 100px;
+    }
+  }
+  
+  /* ====================================================
+     SMALL DEVICES (Landscape Phones, 576px–767.98px)
+     ==================================================== */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    /* Stack nav on top */
+    .home-container {
+      flex-direction: column;
+    }
+    
+    .sidenav-container {
+      width: 100%;
+      height: auto;
+      background-color: #222831;
+    }
+    
+    .sidenav {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+    }
+    
+    .sidenav a {
+      font-size: 16px;
+      margin: 5px;
+      padding: 8px 12px;
+      height: auto;
+      width: auto;
+    }
+    
+    /* Section container fills remaining space */
+    .section-container {
+      height: calc(100vh - 60px); /* Adjust if your nav height changes */
+    }
+    
+    /* Adjust hero and logo sizes */
+    .hero-content {
+      padding: 15px;
+    }
+    
+    .hero-main-container {
+      height: auto;
+      padding: 20px 0;
+    }
+    
+    .hero-subtitle {
+      font-size: 2rem;
+    }
+    
+    .hero-subtitle-paragraph {
+      font-size: 1.3rem;
+    }
+    
+    #logo text {
+      font-size: 70px;
+    }
+  }
+  
+  /* ====================================================
+     EXTRA SMALL DEVICES (Portrait Phones, <576px)
+     ==================================================== */
+  @media (max-width: 575.98px) {
+    /* Stack nav on top; use more compact spacing */
+    .home-container {
+      flex-direction: column;
+    }
+    
+    .sidenav-container {
+      width: 100%;
+      height: auto;
+      /* padding: 5px 0; */
+      background-color: #222831;
+    }
+    
+    .sidenav {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      padding: 5px 10px;
+      overflow-x: auto;
+    }
+    
+    .sidenav a {
+      font-size: 14px;
+      margin: 3px;
+      padding: 6px 10px;
+      height:auto;
+    }
+    
+    
+    /* Allow more room for content by reducing header space */
+    .section-container {
+      height: calc(100vh - 50px); /* Adjust if nav height changes */
+    }
+    
+    .hero-content {
+      padding: 10px;
+    }
+    
+    .hero-main-container {
+      height: auto;
+      padding: 20px;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.8rem;
+      margin-bottom:0px;
+    }
+    
+    .hero-subtitle-paragraph {
+      font-size: 1.2rem;
+    }
+    
+    #logo text {
+      font-size: 70px;
+    }
+
+    .intro-text {
+      display:none;
+    }
+  }
+  
