@@ -315,6 +315,8 @@
   /* Reduce journey-mode container height */
   .journey-mode .journey-mode-container {
     height: 70vh;
+    overflow-x: scroll;
+    width:100%;
   }
   .journey-mode .back-btn {
     top: 0.5rem;
