@@ -119,6 +119,7 @@
 @media (max-width: 480px) {
   #tech-stack {
       padding: 35px 10px;
+      min-height:fit-content;
   }
 
   .section-title {
